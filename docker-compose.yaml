@@ -12,7 +12,7 @@ services:
    app3:
      build: ./app3
      ports:
-     - "5003:5001" 
+     - "5003:5000" 
    nginx:
      build: ./nginx
      ports:

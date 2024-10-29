@@ -11,8 +11,8 @@ app = Flask(__name__)
 def hello_world():
     return 'This is backend  ! ' + str(socket.gethostname()) + ' \n'
 
-@app.route("/compute", methods=["POST"])
-def compute():
+@app.route("/joke", methods=["GET"])
+def joke():
     hostName = socket.gethostname()
 
     bc = computeEngine.BackendCompute(hostName)
