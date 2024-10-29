@@ -10,7 +10,7 @@ from flask_cors import CORS, cross_origin
 
 #
 #
-url = 'http://localhost:8080/'
+url = 'http://localhost:8080/joke'
 
 
 app = Flask(__name__)
@@ -28,26 +28,12 @@ def hello_world():
     print(data,response)
     return data
 
-# curl http://localhost:5000/get-a-joke
-@app.route("/get-a-joke")
-def get_a_joke():
+# curl http://localhost:5000/joke
+@app.route("/joke")
+def joke():
     response = requests.get(url,headers={'Content-type': "application/json"}, stream=True)
     data = response.raw.read()
     print(data,response)
     return data
-
-#
-# curl -v "Content-Type: application/json"  -H -d "{\"heads\":6 }" -X POST "http://localhost:5000/compute"
-#
-@app.route("/compute", methods=['POST'])
-def store_score():
-    myData = request.json
-    print(str(request.json))
-    print(request);
-    #print("My value: ",value) 
-    response = requests.post(url + "compute", headers={'Content-type': "application/json; charset=UTF-8"}, json=myData, stream=True)
-    print(str(response.raw.read()))
-    return "good!"
-
 if __name__=="__main__":
     app.run(port=5000, debug=True)
