@@ -19,9 +19,9 @@ def compute():
     random_joke = bc.get_a_joke()
 
     returnDictionary = {}
-    returnDictionary["hostname"] = hostname
+    returnDictionary["hostname"] = hostName
     returnDictionary["randomjoke"] = random_joke
     
     return json.dumps(returnDictionary)
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0',port=8080)
