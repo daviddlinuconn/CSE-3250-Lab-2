@@ -15,18 +15,13 @@ def hello_world():
 def compute():
     hostName = socket.gethostname()
 
-    bc = computeEngine.BackendCompute(hostName)    
-    bc.processPRandomSeed()
-    
-    limit = int(request.json['heads'])
-    print("limit: ", limit)
+    bc = computeEngine.BackendCompute(hostName)
+    random_joke = bc.get_a_joke()
 
-    total_flips = bc.flipCoinsUntil(int(limit))
     returnDictionary = {}
-    returnDictionary["hostName"] = hostName
-    returnDictionary["total_flips"] = total_flips
-    returnDictionary["heads"] = request.json['heads']
+    returnDictionary["hostname"] = hostName
+    returnDictionary["randomjoke"] = random_joke
     
-    return json.dumps(returnDictionary)
+    return json.dumps(returnDictionary,ensure_ascii=False)
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

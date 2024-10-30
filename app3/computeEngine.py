@@ -8,9 +8,6 @@ class BackendCompute:
         self.name = myHostName
          
     def get_a_joke(self):
-      random_integer = random.randint(1,2)
-      if (random_integer == 1):
-         return pyjokes.get_joke(language='en', category="neutral")
-      else:
          return pyjokes.get_joke(language='it', category="neutral")
+
          
