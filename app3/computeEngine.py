@@ -12,5 +12,5 @@ class BackendCompute:
       if (random_integer == 1):
          return pyjokes.get_joke(language='en', category="neutral")
       else:
-         return pyjokes.get_joke(language='es', category="neutral")
+         return pyjokes.get_joke(language='it', category="neutral")
          

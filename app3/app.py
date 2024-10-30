@@ -22,6 +22,6 @@ def compute():
     returnDictionary["hostname"] = hostName
     returnDictionary["randomjoke"] = random_joke
     
-    return json.dumps(returnDictionary)
+    return json.dumps(returnDictionary,ensure_ascii=False)
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

@@ -32,7 +32,10 @@ def hello_world():
 @app.route("/compute", methods=['POST'])
 def get_joke():
     myData = request.json
-    print("Data:".myData)
+    print("Data:",myData)
     response = requests.post(url + "compute", headers={'Content-type': "application/json; charset=UTF-8"}, json=myData, stream=True)
+    joke_response =  response.json()
+    print(joke_response)
+    return response.json()
 if __name__=="__main__":
     app.run(port=5000, debug=True)
