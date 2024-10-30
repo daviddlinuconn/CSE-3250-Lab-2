@@ -1,13 +1,12 @@
 # nginx Load Balancer Lab 2 modified with PyJokes
 
-This is a modified version of the NginxLoadBalancer demonstration from Phil Bradford all credit goes to him and his project: https://github.com/wonder-phil/nginxLoadBalancerPythonFlask/tree/main
+This is a modified version of the NginxLoadBalancer demonstration from Professor Bradford all credit goes to him and his project: https://github.com/wonder-phil/nginxLoadBalancerPythonFlask/
 
-TO get this working:
+To get this running:
 
-1. docker-compose up
-2. python3 load_driver.py
-3. curl -v -X GET "http://localhost:8080/"
-4. curl -H "Content-Type: application/json" -d "{\\"heads\\":6 }" -X POST "http://localhost:8080/compute"
-
-# NOTE clear docker containers from the cache
-## docker-compose down --rmi all
+1. git clone this repository
+2. pip install required components
+4. docker-compose up
+5. python3 load_driver.py
+6. curl -H "Content-Type: application/json" -d "{\\"heads\\":6 }" -X POST "http://localhost:8080/compute"
+7. gracefully shut down the system with docker-compose down
