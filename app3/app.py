@@ -11,8 +11,8 @@ app = Flask(__name__)
 def hello_world():
     return 'This is backend  ! ' + str(socket.gethostname()) + ' \n'
 
-@app.route("/joke", methods=["GET"])
-def joke():
+@app.route("/compute", methods=["POST"])
+def compute():
     hostName = socket.gethostname()
 
     bc = computeEngine.BackendCompute(hostName)
@@ -24,4 +24,4 @@ def joke():
     
     return json.dumps(returnDictionary)
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0',port=8080)
+    app.run(debug=True, host='0.0.0.0')
