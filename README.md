@@ -8,5 +8,5 @@ To get this running:
 2. pip install required components
 4. docker-compose up
 5. python3 load_driver.py
-6. curl -H "Content-Type: application/json" -d "{\\"heads\\":6 }" -X POST "http://localhost:8080/compute"
+6. curl -H "Content-Type: application/json" -d "{}" -X POST "http://localhost:5000/compute"
 7. gracefully shut down the system with docker-compose down
